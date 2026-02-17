@@ -46,4 +46,24 @@ fn main() {
     };
 
     screen.run();
+
+    // ここでは型を知らないので、明示する
+    let components: Vec<Box<dyn Draw>> = vec![
+        Box::new(SelectBox {
+            width: 175,
+            height: 200,
+            options: vec![String::from("Yes"), String::from("Wow")],
+        }),
+        Box::new(Button {
+            width: 20,
+            height: 20,
+            on_click: String::from("submit"),
+        }),
+    ];
+
+    let screen2 = Screen {
+        components: components,
+    };
+
+    screen2.run();
 }
