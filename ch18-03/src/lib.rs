@@ -19,6 +19,8 @@ impl Post {
         ""
     }
 
+    // 構造体のフィールドの一部だけ所有権取られたことにはできない。
+    // Option::takeは元の値(場所）にNoneを入れて、新しい値を返す
     pub fn request_review(&mut self) {
         if let Some(s) = self.state.take() {
             self.state = Some(s.request_review());
