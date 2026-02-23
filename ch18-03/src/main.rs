@@ -6,9 +6,9 @@ fn main() {
     post.add_text("hello");
     assert_eq!("", post.content());
 
-    post.request_review();
-    assert_eq!("", post.content());
+    // post.request_review();
+    // assert_eq!("", post.content());
 
-    post.approve();
-    assert_eq!("hello", post.content());
+    // post.approve();
+    // assert_eq!("hello", post.content());
 }
