@@ -5,14 +5,11 @@ fn main() {
 
     post.add_text("hello");
 
-    let review = post.request_review();
+    let post = post.request_review();
 
-    let publised = review.approve();
+    let post = post.approve();
 
-    // // already moved
-    // review.approve();
-
-    assert_eq!("hello", publised.content());
+    assert_eq!("hello", post.content());
 
     // assert_eq!("", post.content());
 
