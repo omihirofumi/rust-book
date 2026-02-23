@@ -4,9 +4,16 @@ fn main() {
     let mut post = Post::new();
 
     post.add_text("hello");
-    assert_eq!("", post.content());
 
-    // post.request_review();
+    let review = post.request_review();
+
+    let publised = review.approve();
+
+    // // already moved
+    // review.approve();
+
+    assert_eq!("hello", publised.content());
+
     // assert_eq!("", post.content());
 
     // post.approve();
