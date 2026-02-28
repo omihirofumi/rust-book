@@ -1,10 +1,19 @@
 fn main() {
-    println!("Hello, world!");
+    // println!("Hello, world!");
 
-    let v: Vec<i32> = vec![0, 1, 2];
-    let n_ref: &i32 = &v[0];
+    // let mut v: Vec<i32> = vec![0, 1, 2];
+    // let n_ref: &i32 = &v[0];
 
-    let n: i32 = *n_ref;
+    // let n: i32 = *n_ref;
+
+    // let s = &v;
+
+    // v.push(0);
+
+    // println!("{}", s[0]);
+
+    let s = "Hello, world!";
+    println!("{}", s);
 }
 
 // これはだめ。sが所有権持ってるので、スコープ抜けるとdropされてしまう。
@@ -52,4 +61,16 @@ fn add_big_strings(dst: &mut Vec<String>, src: &[String]) {
             dst.push(s.clone());
         }
     }
+}
+
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
