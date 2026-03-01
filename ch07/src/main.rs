@@ -1,6 +1,8 @@
-use crate::garden::vegetables::Asparagas;
+use crate::garden::vegetables::Asparagus;
+
+pub mod garden;
 
 fn main() {
-    let plant = Asparagas {};
+    let plant = Asparagus {};
     println!("I'm growingn {plant:?}");
 }
