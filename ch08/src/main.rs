@@ -29,4 +29,13 @@ fn main() {
     // println!("{s3}");
     let s3 = format!("{s1} {s2}");
     println!("{s1}");
+
+    let hello = "Здравствуйте";
+
+    let s = &hello[0..4];
+    println!("{s}");
+
+    if s.is_char_boundary(4) {
+        println!("NO");
+    }
 }
