@@ -22,4 +22,11 @@ fn main() {
     let s = "initial contents".to_string();
     let mut s = String::from("initial contents");
     s.push_str("bar");
+
+    let s1 = String::from("Hello");
+    let s2 = String::from("World");
+    // let s3 = s1 + &s2;
+    // println!("{s3}");
+    let s3 = format!("{s1} {s2}");
+    println!("{s1}");
 }
