@@ -38,4 +38,15 @@ fn main() {
     if s.is_char_boundary(4) {
         println!("NO");
     }
+
+    use std::collections::HashMap;
+
+    let mut scores = HashMap::new();
+    scores.insert(String::from("Blue"), 10);
+
+    scores.entry(String::from("Yellow")).or_insert(50);
+    let m = scores.entry(String::from("Blue")).or_insert(50);
+
+    // println!("{scores:?}");
+    println!("{m}");
 }
