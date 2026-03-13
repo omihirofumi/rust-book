@@ -84,4 +84,5 @@ fn main() {
     // let s = String::from("hoge");これsが所有権持ってるけど、dropするかどうかはs次第でsは別に何回も参照できる
     let f = move || println!("{s}");
     // println!("{s}");
+    // Fnトレイトとかの実装はコンパイルがコード解析して、コード生成してくれてるらしい
 }
