@@ -76,4 +76,12 @@ fn main() {
         .join()
         .unwrap();
     // println!("After defining closure: {list:?}");
+    //
+
+    let s = String::from("hello");
+    // 所有権をクロージャに移すけど、消費するかはクロージャ次第
+    // 確かに、所有権持つだけで、それの使い方は実装次第。普通の変数と一緒。
+    // let s = String::from("hoge");これsが所有権持ってるけど、dropするかどうかはs次第でsは別に何回も参照できる
+    let f = move || println!("{s}");
+    // println!("{s}");
 }
