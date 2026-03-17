@@ -16,6 +16,15 @@ fn main() {
 
     assert_eq!(5, x);
     assert_eq!(5, *y);
+
+    let m = MyBox::new(String::from("Hello!!"));
+    hello(&m);
+    // derefがない世界線
+    // hello(&(*m)[..]);
+}
+
+fn hello(message: &str) {
+    println!("{message}");
 }
 
 struct MyBox<T>(T);
